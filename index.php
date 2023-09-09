@@ -1,5 +1,6 @@
 <?php 
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('VOID', 'javascript:void(0)');
 
 require_once ROOT . '/config\db_conn.php'; // db
 require_once ROOT . '/header.php'; // 헤더 

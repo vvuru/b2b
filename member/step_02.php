@@ -1,9 +1,8 @@
 <?php
-session_start();
-$_SESSION['cert_num'] = '123456';
+$cert_num = '123456';
 ?>
 <script>
-    const certNum = '<?=$_SESSION['cert_num']?>';
+    const certNum = '<?=$cert_num?>';
 </script>
 <div id="container" class="container-full">
 	<div id="content" class="content">
@@ -38,11 +37,11 @@ $_SESSION['cert_num'] = '123456';
 						<input type="text" id="phone1" class="input-text" style="width:50px"/> - 
 						<input type="text" id="phone2" class="input-text" style="width:50px"/> - 
 						<input type="text" id="phone3" class="input-text" style="width:50px"/>
-						<a href="#" onclick="getCertNum()" class="btn-s-line">인증번호 받기</a>
+						<a href="<?=VOID?>" onclick="getCertNum()" class="btn-s-line">인증번호 받기</a>
 
 						<br /><br />
 						<input type="text" id="certNum" class="input-text" style="width:200px"/>
-						<a href="#" onclick="signUp('<?=$_GET['mode']?>')" class="btn-s-line">인증번호 확인</a>
+						<a href="javascript:" onclick="signUp('<?=$_GET['mode']?>')" class="btn-s-line">인증번호 확인</a>
 					</div>
 					<i class="graphic-phon"><span>휴대폰 인증</span></i>
 				</div>

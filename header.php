@@ -24,7 +24,7 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
-<script type="text/javascript" src="/main.js"></script>
+<script type="text/javascript" src="/main.js?v=<?=date('YmdHis')?>"></script>
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>

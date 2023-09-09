@@ -14,6 +14,20 @@ const chkAll = function() {
     })
 }
 
+const chkForm = function() {
+    const form = new FormData();
+    form.append('name',)
+    $.ajax({
+        url: '/?d=member&mode=regist',
+        data: form,
+        processData: false,
+        success: function(data) {
+            console.log(data);
+        }
+
+    })
+}
+
 const signUp = function(step) {
     switch(step) {
         case 'step_01':
@@ -30,6 +44,9 @@ const signUp = function(step) {
                 alert('인증번호가 일치하지 않습니다.');
             }
             break;
+        case 'step_03':
+            chkForm();
+            break;
     }
 }
 
@@ -39,4 +56,26 @@ const getCertNum = function() {
     } else {
         alert('휴대폰 번호를 입력해주세요.');
     }
+}
+
+const dupchkID = function(id) {
+    if(id) {
+        $.ajax({
+            url: '/member/dupchk_id.php',
+            data: {id: id},
+            success: function(res) {
+                alert(res);
+                ckId = true;
+            },
+            error: function(e) {
+                alert(e);
+            }
+        })
+    } else {
+        alert('아이디를 입력하세요.');
+    }
+}
+
+const chgMail = function(el) {
+    $('input[name=\'email2\'').val(el.value);
 }
