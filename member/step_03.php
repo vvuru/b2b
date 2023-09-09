@@ -33,25 +33,25 @@
                         <form name="join">
 						<tr>
 							<th scope="col"><span class="icons">*</span>이름</th>
-							<td><input type="text" name="name" class="input-text" style="width:302px"/></td>
+							<td><input type="text" id="name" class="input-text" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>아이디</th>
-							<td><input type="text" id="id" name="id" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/>
+							<td><input type="text" id="id" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/>
                             <a href="javascript:" onclick="dupchkID($('#id').val())" class="btn-s-tin ml10">중복확인</a></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호</th>
-							<td><input type="password" name="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
+							<td><input type="password" id="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-							<td><input type="password" name="confirm_password" class="input-text" style="width:302px"/></td>
+							<td><input type="password" id="confirm_password" class="input-text" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이메일주소</th>
 							<td>
-								<input type="text" name="email1" class="input-text" style="width:138px"/> @ <input type="text" name="email2" class="input-text" style="width:138px"/>
+								<input type="text" id="email1" class="input-text" style="width:138px"/> @ <input type="text" id="email2" class="input-text" style="width:138px"/>
 								<select class="input-sel" style="width:160px" onchange="chgMail(this)">
 									<option value="">직접입력</option>
 									<option value="naver.com">naver.com</option>
@@ -64,26 +64,26 @@
 						<tr>
 							<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 							<td>
-								<input type="text" name="phone1" value="<?=$_GET['phone1']?>" readonly class="input-text" style="width:50px"/> - 
-								<input type="text" name="phone2" value="<?=$_GET['phone2']?>" readonly class="input-text" style="width:50px"/> - 
-								<input type="text" name="phone3" value="<?=$_GET['phone3']?>" readonly class="input-text" style="width:50px"/>
+								<input type="text" id="phone1" value="<?=$_GET['phone1']?>" readonly class="input-text" style="width:50px"/> - 
+								<input type="text" id="phone2" value="<?=$_GET['phone2']?>" readonly class="input-text" style="width:50px"/> - 
+								<input type="text" id="phone3" value="<?=$_GET['phone3']?>" readonly class="input-text" style="width:50px"/>
 							</td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons"></span>일반전화 번호</th>
-							<td><input type="text" name="tel1" class="input-text" style="width:88px"/> - <input type="text" name="tel2" class="input-text" style="width:88px"/> - <input type="text" name="tel3" class="input-text" style="width:88px"/></td>
+							<td><input type="text" id="tel1" class="input-text" style="width:88px"/> - <input type="text" id="tel2" class="input-text" style="width:88px"/> - <input type="text" id="tel3" class="input-text" style="width:88px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>주소</th>
 							<td>
 								<p >
-									<label>우편번호 <input type="text" name="uno" value="08781" class="input-text ml5" style="width:242px" readonly /></label><a href="#" class="btn-s-tin ml10">주소찾기</a>
+									<label>우편번호 <input type="text" id="uno" value="08781" class="input-text ml5" style="width:242px" readonly /></label><a href="#" class="btn-s-tin ml10">주소찾기</a>
 								</p>
 								<p class="mt10">
-									<label>기본주소 <input type="text" name="basic_address" class="input-text ml5" style="width:719px"/></label>
+									<label>기본주소 <input type="text" id="basic_address" class="input-text ml5" style="width:719px"/></label>
 								</p>
 								<p class="mt10">
-									<label>상세주소 <input type="text" name="detail_address" class="input-text ml5" style="width:719px"/></label>
+									<label>상세주소 <input type="text" id="detail_address" class="input-text ml5" style="width:719px"/></label>
 								</p>
 							</td>
 						</tr>

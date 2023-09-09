@@ -16,13 +16,46 @@ const chkAll = function() {
 
 const chkForm = function() {
     const form = new FormData();
-    form.append('name',)
+    form.append('name',$('#name').val());
+    form.append('id',$('#id').val());
+    form.append('password',$('#password').val());
+    const email = `${$('#email1').val()}@${$('#email2').val()}`;
+    form.append('email',email);
+    const phone = `${$('#phone1').val()}-${$('#phone2').val()}-${$('#phone3').val()}`;
+    form.append('phone',phone);
+    let tel = false;
+    if($('#tel1').val()) {
+        tel = `${$('#tel1').val()}-${$('#tel2').val()}-${$('#tel3').val()}`;
+        form.append('home_tel',tel);
+    }
+    form.append('uno',$('#uno').val());
+    form.append('basic_address',$('#basic_address').val());
+    form.append('detail_address',$('#detail_address').val());
+    form.append('sms_agree',$('input:radio[name="sms"]:checked').val());
+    form.append('mail_agree',$('input:radio[name="mail"]:checked').val());
+    
     $.ajax({
-        url: '/?d=member&mode=regist',
-        data: form,
-        processData: false,
+        url: '/member/regist.php',
+        type: 'post',
+        data: {
+            name: $('#name').val(),
+            id: $('#id').val(),
+            password: $('#password').val(),
+            email: email,
+            phone: phone,
+            home_tel: tel,
+            uno: $('#uno').val(),
+            basic_address: $('#basic_address').val(),
+            detail_address: $('#detail_address').val(),
+            sms_agree: $('input:radio[name="sms"]:checked').val(),
+            mail_agree: $('input:radio[name="mail"]:checked').val(),
+        },
         success: function(data) {
-            console.log(data);
+            if(data == 'success') {
+                location.href = `/?d=member&mode=complete`;
+            } else {
+                alert('회원가입에 실패하였습니다.');
+            }
         }
 
     })
@@ -77,5 +110,5 @@ const dupchkID = function(id) {
 }
 
 const chgMail = function(el) {
-    $('input[name=\'email2\'').val(el.value);
+    $('#email2').val(el.value);
 }
